@@ -39,4 +39,3 @@ Visit http://patux.cl/ipv6detector/ for further info.
 
 == Changelog ==
 1.0 First version.
-
