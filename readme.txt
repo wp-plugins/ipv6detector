@@ -29,8 +29,13 @@ It's so simple. There can't be questions.
 
 Visit http://patux.cl/ipv6detector/ for further info.
 
+== Screenshots ==
 
+1. This screen shot description corresponds to screenshot-1.png
+
+== Upgrade Notice ==
+
+= 1.0 = The first release.
 
 == Changelog ==
-= 1.0
-First version.
+1.0 First version.
