@@ -4,7 +4,7 @@
   Plugin Name: ipv6detector
   Plugin URI: http://patux.cl/ipv6detector
   Description: Just a simple plugin to detect if a visitor is using ipv6 or not.
-  Version: 1.1
+  Version: 1.2
   Author: Patux
   Author URI: http://patux.cl
   License: GPL2
