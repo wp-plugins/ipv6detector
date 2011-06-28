@@ -4,7 +4,7 @@ Donate link: http://patux.cl
 Tags: ipv6, ipv4, detect, whois
 Requires at least: 2.6.0
 Tested up to: 3.1.3
-Stable tag: 1.1
+Stable tag: 1.2
 
 == Description ==
 Simple IPv6 detector widget for WordPress to show if user is connecting with IPv6 or IPv4.
@@ -34,6 +34,8 @@ Visit http://patux.cl/ipv6detector/ for further info.
 1. This screen shot description corresponds to screenshot-1.png
 
 == Upgrade Notice ==
+= 1.2 =
+Bug fixes.
 
 = 1.1 = 
 Added features like stats and custom messages.
@@ -42,6 +44,9 @@ Added features like stats and custom messages.
 = 1.0 = The first release.
 
 == Changelog ==
+= 1.2 =
+* Fixed sticky default url for whois service :)
+
 = 1.1 = 
 * Added custom msgs.
 * Added stats display

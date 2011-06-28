@@ -4,7 +4,7 @@
   Plugin Name: ipv6detector
   Plugin URI: http://patux.cl/ipv6detector
   Description: Just a simple plugin to detect if a visitor is using ipv6 or not.
-  Version: 1.1
+  Version: 1.2
   Author: Patux
   Author URI: http://patux.cl
   License: GPL2
@@ -17,6 +17,7 @@ function ipv6detector_register_widget() {
     register_widget_control('ipv6detector', 'ipv6detector_control');
     add_option("hits_6", 0);
     add_option("hits_4", 0);
+    add_option('whois_url','http://log.patux.cl/whois.php?obj=');
 }
 
 function ipv6detector($args) {
@@ -36,7 +37,7 @@ function ipv6detector($args) {
     }
 
     $stats = _get_stats($v);
-    $URL = get_option('ipv6detector_url');
+    $URL = get_option('whois_url');
 
     echo "<a href=\"$URL$ip\"> $ip </a>";
     echo "<ul>";
@@ -51,10 +52,10 @@ function ipv6detector_control() {
 
     // whois service url
     if (isset($_POST['url']) && !empty($_POST['url'])) {
-        update_option('ipv6detector_url', $_POST['url']);
+        update_option('whois_url', $_POST['url']);
     }
-    $url = get_option('ipv6detector_url');
-    echo "URL to link ip address: <input type='text' name='url' value='http://log.patux.cl/whois.php?obj='/><br />\n";
+    $url = get_option('whois_url');
+    echo "URL to link ip address: <input type='text' name='url' value='".$url."'/><br />\n";
 
     // ipv4 message
     if (isset($_POST['v4_msg']) && !empty($_POST['v4_msg'])) {
@@ -76,7 +77,7 @@ function ipv6detector_control() {
         update_option('hits_6', 0);
         update_option('hits_4', 0);
     }
-    echo "Reset hit count <input type='checkbox' name='rhit' value='1'/><br />\n";
+    echo "Reset hit count and config <input type='checkbox' name='rhit' value='1'/><br />\n";
 }
 
 
