@@ -4,7 +4,7 @@
   Plugin Name: ipv6detector
   Plugin URI: http://patux.cl/ipv6detector
   Description: Just a simple plugin to detect if a visitor is using ipv6 or not.
-  Version: 1.2
+  Version: 1.1
   Author: Patux
   Author URI: http://patux.cl
   License: GPL2
@@ -17,7 +17,9 @@ function ipv6detector_register_widget() {
     register_widget_control('ipv6detector', 'ipv6detector_control');
     add_option("hits_6", 0);
     add_option("hits_4", 0);
-    add_option('whois_url','http://log.patux.cl/whois.php?obj=');
+    add_option("whois_url","http://log.patux.cl/whois.php?obj=");
+    add_option("ipv6detector_v4_msg","Still using IPv4?");
+    add_option("ipv6detector_v6_msg","Cool! you have got IPv6.");
 }
 
 function ipv6detector($args) {
@@ -61,21 +63,24 @@ function ipv6detector_control() {
     if (isset($_POST['v4_msg']) && !empty($_POST['v4_msg'])) {
         update_option('ipv6detector_v4_msg', $_POST['v4_msg']);
     }
-    $url = get_option('ipv6detector_v4_msg');
-    echo "Message to display when user have IPv4 <input type='text' name='v4_msg' value='Still using IPv4?'/><br />\n";
+    $v4_msg = get_option('ipv6detector_v4_msg');
+    echo "Message to display when user have IPv4 <input type='text' name='v4_msg' value='".$v4_msg."'/><br />\n";
 
     // ipv6 message
     if (isset($_POST['v6_msg']) && !empty($_POST['v6_msg'])) {
         update_option('ipv6detector_v6_msg', $_POST['v6_msg']);
     }
-    $url = get_option('ipv6detector_v6_msg');
-    echo "Message to display when user have IPv6 <input type='text' name='v6_msg' value='Cool! you have got Ipv6'/><br />\n";
+    $v6_msg = get_option('ipv6detector_v6_msg');
+    echo "Message to display when user have IPv6 <input type='text' name='v6_msg' value='".$v6_msg."'/><br />\n";
 
 
     // Reset hitcount
     if ($_POST['rhit'] == "1" ) {
         update_option('hits_6', 0);
         update_option('hits_4', 0);
+        delete_option('whois_url', 0);
+        delete_option('ipv6detector_v6_msg', 0);
+        delete_option('ipv6detector_v4_msg', 0);
     }
     echo "Reset hit count and config <input type='checkbox' name='rhit' value='1'/><br />\n";
 }
