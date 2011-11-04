@@ -34,6 +34,9 @@ Visit http://patux.cl/ipv6detector/ for further info.
 1. This screen shot description corresponds to screenshot-1.png
 
 == Upgrade Notice ==
+= 1.3 =
+HTML5 compatibility fixes.
+
 = 1.2 =
 Bug fixes.
 
@@ -44,6 +47,9 @@ Added features like stats and custom messages.
 = 1.0 = The first release.
 
 == Changelog ==
+= 1.3 =
+Fixed some html problems to validate code.
+
 = 1.2 =
 * Fixed sticky default url for whois service :)
 

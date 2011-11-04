@@ -115,10 +115,10 @@ function _get_stats($v="4") {
     $strTmp = "<span id=\"bshow\"><a href=\"#\" onclick=\"showinfo('ipstat')\">Show stats</a></span>
         <div id=\"ipstat\"  style=\"display:none\">
                 
-            <ul><li><span id=\"bhide\"><a href=\"#\" onclick=\"hideinfo('ipstat')\">Hide stats</a></span><table border=\"0\" cellspacing=\"1\" cellpadding=\"0\" width=\"100%\">
+            <ul><li><span id=\"bhide\"><a href=\"#\" onclick=\"hideinfo('ipstat')\">Hide stats</a></span><table style=\"border-spacing:1px; width:100%\; cellpadding:0px; border:0px\">
             <tr><td colspan=\"3\">This server has received ".$tot." hits from both ipv4 and ipv6.</td></tr>
-            <tr><td width=\"35\">IPv4</td><td width=\"25\">" . number_format($v4h, 1) . "%</td><td width=\"100\"><div style=\"margin-top:auto;margin-bottom:0px;background-color:red;height:15px;width:" . $v4h . "px\"></div></td></tr>
-            <tr><td>IPv6</td><td>" . number_format($v6h, 1) . "%</td><td width=\"100\"><div style=\"margin-top:auto;margin-bottom:0px;background-color:lightblue;height:15px;width:" . $v6h . "px\"></div></td></tr>
+            <tr><td style=\"width:35px\">IPv4</td><td style=\"width:25px\">" . number_format($v4h, 1) . "%</td><td style=\"width:100px\"><div style=\"margin-top:auto;margin-bottom:0px;background-color:red;height:15px;width:" . $v4h . "px\"></div></td></tr>
+            <tr><td>IPv6</td><td>" . number_format($v6h, 1) . "%</td><td style=\"width:100px\"><div style=\"margin-top:auto;margin-bottom:0px;background-color:lightblue;height:15px;width:" . $v6h . "px\"></div></td></tr>
             </table></li></ul>
             </div>
             <script type=\"text/javascript\">
